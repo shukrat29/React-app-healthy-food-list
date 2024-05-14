@@ -1,18 +1,25 @@
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  let foodItems = [
+    'Rice',
+    'Almond',
+    'Green Vegetable',
+    'Salad',
+    'Apple',
+    'Milk',
+  ];
   return (
-    <>
+    <React.Fragment>
       <h1>Healthy Food List</h1>
       <ul class='list-group'>
-        <li class='list-group-item'>An item</li>
-        <li class='list-group-item'>A second item</li>
-        <li class='list-group-item'>A third item</li>
-        <li class='list-group-item'>A fourth item</li>
-        <li class='list-group-item'>And a fifth one</li>
+        {foodItems.map((item) => (
+          <li class='list-group-item'>{item}</li>
+        ))}
       </ul>
-    </>
+    </React.Fragment>
   );
 }
 

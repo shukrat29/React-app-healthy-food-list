@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FoodItems from './components/FoodItems';
+import ErrorMessage from './components/ErrorMessage';
 
 function App() {
   let foodItems = [
@@ -11,15 +13,13 @@ function App() {
     'Apple',
     'Milk',
   ];
+
   return (
-    <React.Fragment>
+    <>
       <h1>Healthy Food List</h1>
-      <ul class='list-group'>
-        {foodItems.map((item) => (
-          <li class='list-group-item'>{item}</li>
-        ))}
-      </ul>
-    </React.Fragment>
+      <ErrorMessage items={foodItems}></ErrorMessage>
+      <FoodItems items={foodItems}></FoodItems>
+    </>
   );
 }
 
